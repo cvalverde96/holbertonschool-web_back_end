@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-import math
 
 """
 Module to return fllor of a float
 """
+
+import math
 
 
 def floor(n: float) -> int:
