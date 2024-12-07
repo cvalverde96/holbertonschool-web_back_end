@@ -14,10 +14,8 @@ import asyncio
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-
 async def wait_n(n: int, max_delay: int) -> List[float]:
     """
-
     Args:
         n (int): the amount of time wait_random is spawned
         max_delay (int): the amount of time is delayed
@@ -27,9 +25,9 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     """
     delays = []
     tasks = [wait_random(max_delay) for _ in range(n)]
-    
+
     for task in asyncio.as_completed(tasks):
         delay = await task
         delays.append(delay)
-    
+
     return delays
