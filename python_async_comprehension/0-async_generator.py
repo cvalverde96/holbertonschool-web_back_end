@@ -8,8 +8,6 @@ Using the random module.
 """
 import asyncio
 import random
-from asyncio import sleep
-from random import uniform
 from typing import AsyncGenerator
 
 
