@@ -6,8 +6,8 @@ The coroutine will loop 10 times, each time asynchronously wait 1 second,
 then yield a random number between 0 and 10.
 Using the random module.
 """
-
 import asyncio
+from asyncio import sleep
 import random
 from typing import AsyncGenerator
 
