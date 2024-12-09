@@ -8,18 +8,14 @@ Using the random module.
 """
 import asyncio
 import random
-from typing import AsyncGenerator
+from typing import Generator
 
 
-async def async_generator() -> AsyncGenerator[float, None]:
+async def async_generator() -> Generator[float, None, None]:
     """_summary_
 
-    Returns:
-        AsyncGenerator[float, None]: returns a random number that is float
-
     Yields:
-        Iterator[AsyncGenerator[float, None]]:
-        returns a random number that is float
+        Generator[float, None, None]: return a float number
     """
     for _ in range(10):
         yield random.uniform(0.0, 10.0)
