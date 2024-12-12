@@ -39,7 +39,16 @@ class Server:
             }
         return self.__indexed_dataset
 
-    def get_hyper_index(self, index: Optional[int] = None, page_size: int = 10) -> Dict:
+    def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+        """_summary_
+
+        Args:
+            index (int, optional): starting index. Defaults to None.
+            page_size (int, optional): size of the page. Defaults to 10.
+
+        Returns:
+            Dict: returns dictionary with index, next_index, page_size and data
+        """
         if index is None:
             index = 0
 
