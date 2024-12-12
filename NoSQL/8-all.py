@@ -8,7 +8,9 @@ from pymongo.collection import Collection
 from typing import Dict, Any, Optional, Iterable
 
 
-def list_all(mongo_collection: Optional[Collection]) -> Iterable[Dict[str, Any]]:
+def list_all(
+    mongo_collection: Optional[Collection]
+) -> Iterable[Dict[str, Any]]:
     """_summary_
 
     Args:
