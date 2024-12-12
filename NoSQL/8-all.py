@@ -17,7 +17,7 @@ def list_all(mongo_collection: Collection) -> List[Dict[str, Any]]:
     Returns:
         List[Dict[str, Any]]: a list of dictionaries
     """
-    if mongo_collection == []:
+    if mongo_collection is None:
         return []
     else:
         return list(mongo_collection.find({}))
