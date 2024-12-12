@@ -20,4 +20,4 @@ def list_all(mongo_collection: Collection) -> List[Dict[str, Any]]:
     if mongo_collection is None:
         return []
     else:
-        return list(mongo_collection.find({}))
+        return list(mongo_collection.find())
