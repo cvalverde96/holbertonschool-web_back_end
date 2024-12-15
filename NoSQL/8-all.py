@@ -2,24 +2,19 @@
 
 """
 a Python function that lists all documents in a collection
+Return an empty list if no document in the collection
 """
-
 from pymongo.collection import Collection
-from typing import Dict, Any, Optional, Iterable
+from typing import List, Dict, Any, Optional
 
 
-def list_all(
-    mongo_collection: Optional[Collection]
-) -> Iterable[Dict[str, Any]]:
+def list_all(mongo_collection: Optional[Collection]) -> List[Dict[str, Any]]:
     """_summary_
 
     Args:
-        mongo_collection (Optional[Collection]): instance of pymongo collection
+        mongo_collection (Optional[Collection]): a collection object
 
     Returns:
-        Iterable[Dict[str, Any]]: list of documents in collection
+        List[Dict[str, Any]]: a list of dictionaries
     """
-    if mongo_collection is None:
-        return []
-    else:
-        return mongo_collection.find()
+    return [] if mongo_collection is None else list(mongo_collection.find())
