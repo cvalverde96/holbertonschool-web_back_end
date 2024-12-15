@@ -5,10 +5,6 @@ a Python function that changes all topics of a school
 document based on the name
 """
 
-from pymongo.collection import Collection
-from typing import List
-
-
 import pymongo
 from typing import List
 
