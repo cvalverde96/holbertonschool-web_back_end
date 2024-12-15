@@ -3,18 +3,17 @@
 """
  a Python function that inserts a new document in a collection based on kwargs
 """
-from pymongo.collection import Collection
-from typing import Any
+import pymongo
 
 
-def insert_school(mongo_collection: Collection, **kwargs: Any) -> Any:
+def insert_school(mongo_collection, **kwargs):
     """_summary_
 
     Args:
-        mongo_collection (Collection): a collection object
+        mongo_collection (_type_): a collection object
 
     Returns:
-        Any: an id of the new document
+        _type_: a new document ID
     """
     new_doc = mongo_collection.insert_one({**kwargs})
     return new_doc.inserted_id
