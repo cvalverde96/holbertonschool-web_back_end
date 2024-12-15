@@ -4,11 +4,10 @@
 a Python function that lists all documents in a collection
 Return an empty list if no document in the collection
 """
-from pymongo.collection import Collection
-from typing import List, Dict, Any, Optional
+import pymongo
 
 
-def list_all(mongo_collection: Optional[Collection]) -> List[Dict[str, Any]]:
+def list_all(mongo_collection):
     """_summary_
 
     Args:
