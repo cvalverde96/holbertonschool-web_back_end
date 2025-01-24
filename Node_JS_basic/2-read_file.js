@@ -16,7 +16,7 @@ function countStudents(path) {
                 fields[field] = { count: 0, names: [] };
             }
             fields[field].count += 1;
-            fields[field].names.puush(firstname);
+            fields[field].names.push(firstname);
         });
 
         Object.entries(fields).forEach(([field, data]) => {
