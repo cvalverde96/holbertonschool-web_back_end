@@ -1,6 +1,4 @@
-// 0-console.js
-function displayMessage(message) {
-    console.log(message);
-}
-
-module.exports = displayMessage;
+// a function named displayMessage that prints in STDOUT the string argument.
+module.exports = function displayMessage(message) {
+  console.log(message);
+};
