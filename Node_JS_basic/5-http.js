@@ -7,18 +7,19 @@ const app = http.createServer(async (req, res) => {
   if (req.url === '/') {
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
+    const databasePath = process.argv[2];
+    let responseText = 'This is the list of our students\n';
+
     try {
-      const response = ['This is the list of our students'];
-      await countStudents(process.argv[2])
-        .then((data) => {
-          Object.entries(data).forEach(([field, fieldData]) => {
-            response.push(`Number of students in ${field}: ${fieldData.count}. List: ${fieldData.names.join(', ')}`);
-          });
-        });
-      res.end(response.join('\n'));
+      const data = await countStudents(databasePath);
+      const studentCounts = Object.entries(data)
+        .map(([field, fieldData]) => `Number of students in ${field}: ${fieldData.count}. List: ${fieldData.names.join(', ')}`).join('\n');
+      responseText += studentCounts;
     } catch (error) {
-      res.end('This is the list of our students\nCannot load the database');
+      responseText += 'Cannot load the database';
     }
+
+    res.end(responseText);
   }
 });
 
