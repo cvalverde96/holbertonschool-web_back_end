@@ -4,7 +4,7 @@ async function countStudents(path) {
   try {
     const fileContent = await fs.readFile(path, 'utf-8');
     const lines = fileContent.trim().split('\n');
-    const students = lines.sclice(1).filter((line) => line.length > 0);
+    const students = lines.slice(1).filter((line) => line.length > 0);
 
     console.log(`Number of students: ${students.length}`);
 
