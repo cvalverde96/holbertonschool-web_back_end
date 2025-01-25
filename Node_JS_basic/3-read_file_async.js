@@ -11,7 +11,7 @@ async function countStudents(path) {
     const fields = {};
     students.forEach((student) => {
       const [firstname, , , field] = student.split(',');
-      if (!fields[fields]) {
+      if (!fields[field]) {
         fields[field] = { count: 0, names: [] };
       }
       fields[field].count += 1;
